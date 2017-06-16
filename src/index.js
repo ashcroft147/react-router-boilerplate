@@ -33,4 +33,5 @@ Perf.stop();
 const measurements = Perf.getLastMeasurements();
 
 Perf.printInclusive(measurements);
+Perf.getExclusive(measurements);
 
