@@ -11,11 +11,9 @@ import requireAuth from './components/require_authentication';
 import App from './components/app';
 import Resources from './components/resources';
 import reducers from './reducers';
-
 import Perf from 'react-addons-perf';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
-
 
 Perf.start();
 ReactDOM.render(
