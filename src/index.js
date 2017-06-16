@@ -12,8 +12,12 @@ import App from './components/app';
 import Resources from './components/resources';
 import reducers from './reducers';
 
+import Perf from 'react-addons-perf';
+
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
+
+Perf.start();
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <Router history={ browserHistory }>
@@ -24,3 +28,11 @@ ReactDOM.render(
     </Router>
   </Provider>
   , document.querySelector('.container'));
+
+
+Perf.stop();
+
+const measurements = Perf.getLastMeasurements();
+
+Perf.printInclusive(measurements);
+
